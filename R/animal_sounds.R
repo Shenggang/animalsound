@@ -27,14 +27,11 @@ animal_sounds <- function(animal, sound=NULL) {
   # stopifnot(is.character(animal) & length(animal) == 1)
   # stopifnot(is.character(sound) & length(sound) == 1)
   check_arg(animal)
-  if (!is.null(sound))
-  {
-    check_arg(sound)
-  }
   if (is.null(sound))
   {
     return(paste0("The ", animal, " makes no sound."))
   }
+  check_arg(sound)
   return(paste0("The ", animal, " goes ", sound, "!"))
 }
 
