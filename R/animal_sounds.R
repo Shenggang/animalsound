@@ -26,23 +26,29 @@
 animal_sounds <- function(animal, sound) {
   # stopifnot(is.character(animal) & length(animal) == 1)
   # stopifnot(is.character(sound) & length(sound) == 1)
-  if (!rlang::is_character(animal, n=1))
-  {
-    cli::cli_abort(
-    c("{.var animal} must be a single string!",
-      "i" = "It was {.type {animal}} of length {length(animal)} instead.")
-  )
-
-  }
-  if (!rlang::is_character(sound, n = 1)) {
-    cli::cli_abort(
-      c("{.var sound} must be a single string!",
-        "i" = "It was {.type {sound}} of length {length(sound)} instead.")
-    )
-  }
+  check_arg(animal)
+  check_arg(sound)
   paste0("The ", animal, " goes ", sound, "!")
 }
 
+
+check_arg = function(arg)
+{
+  if (!rlang::is_character(arg, n = 1)) {
+    cli::cli_abort(
+      c("{.var arg} must be a single string!",
+        "i" = "It was {.type {arg}} of length {length(arg)} instead."),
+        class="type_error"
+    )
+  }
+  # if (!rlang::is_character(arg, 1)) {
+  #   cli::cli_abort(
+  #     c("{.var arg} must be a single string!",
+  #       "i" = "It was {.type {arg}} of length {length(arg)} instead."),
+  #     class = "error_not_single_string"
+  #   )
+  # }
+}
 
 col_summary <- function(df, fun) {
   stopifnot(is.data.frame(df))
