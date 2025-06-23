@@ -23,31 +23,30 @@
 #'
 #' @examples
 #' animal_sounds('dog', 'woolf')
-animal_sounds <- function(animal, sound) {
+animal_sounds <- function(animal, sound=NULL) {
   # stopifnot(is.character(animal) & length(animal) == 1)
   # stopifnot(is.character(sound) & length(sound) == 1)
   check_arg(animal)
-  check_arg(sound)
-  paste0("The ", animal, " goes ", sound, "!")
+  if (!is.null(sound))
+  {
+    check_arg(sound)
+  }
+  if (is.null(sound))
+  {
+    return(paste0("The ", animal, " makes no sound."))
+  }
+  return(paste0("The ", animal, " goes ", sound, "!"))
 }
-
 
 check_arg = function(arg)
 {
   if (!rlang::is_character(arg, n = 1)) {
     cli::cli_abort(
-      c("{.var arg} must be a single string!",
+      c("{.var arg} must be a single string of length greater than 1!",
         "i" = "It was {.type {arg}} of length {length(arg)} instead."),
         class="type_error"
     )
   }
-  # if (!rlang::is_character(arg, 1)) {
-  #   cli::cli_abort(
-  #     c("{.var arg} must be a single string!",
-  #       "i" = "It was {.type {arg}} of length {length(arg)} instead."),
-  #     class = "error_not_single_string"
-  #   )
-  # }
 }
 
 col_summary <- function(df, fun) {
