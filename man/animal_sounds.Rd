@@ -15,7 +15,25 @@ animal_sounds(animal, sound)
 A string composed using the inputs
 }
 \description{
-animalsound function, part of R Workshop example package
+animalsound function, part of R Workshop example package.
+This is an example of text in  \emph{\strong{markdown}}.
+}
+\details{
+\subsection{Detail Section Header}{
+
+Some other markdowns we can use
+\enumerate{
+\item Lists
+\item Enumerated Lists
+\item Tables
+\item Code snippts
+}
+
+\if{html}{\out{<div class="sourceCode">}}\preformatted{animal_sounds("abc", "cdf")
+}\if{html}{\out{</div>}}
+
+The function uses \code{\link[=paste0]{paste0()}} to form the output string.
+}
 }
 \examples{
 animal_sounds('dog', 'woolf')
