@@ -10,7 +10,7 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3
-URL: https://github.com/Shenggang/animalsound
+URL: https://github.com/Shenggang/animalsound, https://shenggang.github.io/animalsound/
 BugReports: https://github.com/Shenggang/animalsound/issues
 Imports: 
     cli,
