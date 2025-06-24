@@ -35,12 +35,13 @@ animal_sounds <- function(animal, sound=NULL) {
   return(paste0("The ", animal, " goes ", sound, "!"))
 }
 
-check_arg = function(arg)
+check_arg = function(arg, n = 1)
 {
-  if (!rlang::is_character(arg, n = 1)) {
+  if (!rlang::is_character(arg, n = n)) {
     cli::cli_abort(
-      c("{.var arg} must be a single string of length greater than 1!",
+      c("{.var {rlang::caller_arg(arg)}} must be a single string of length greater than {n}!",
         "i" = "It was {.type {arg}} of length {length(arg)} instead."),
+        call = rlang::caller_env(),
         class="type_error"
     )
   }
