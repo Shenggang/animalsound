@@ -12,6 +12,7 @@ A package built while going through the development practices in the course mate
 Useful links:
 \itemize{
   \item \url{https://github.com/Shenggang/animalsound}
+  \item \url{https://shenggang.github.io/animalsound/}
   \item Report bugs at \url{https://github.com/Shenggang/animalsound/issues}
 }
 
