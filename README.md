@@ -5,6 +5,7 @@
 
 <!-- badges: start -->
 
+[![R-CMD-check](https://github.com/Shenggang/animalsound/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/Shenggang/animalsound/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 Animalsound is an example package developped during the R package
