@@ -4,7 +4,7 @@
 \alias{animal_sounds}
 \title{animalsound package}
 \usage{
-animal_sounds(animal, sound)
+animal_sounds(animal, sound = NULL)
 }
 \arguments{
 \item{animal}{A non-numerical string of length greater than 1}
